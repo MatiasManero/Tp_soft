@@ -84,9 +84,6 @@ public class Modelo {
 		case 100:view.cambiar_ficha(false, true, false);break;
 		case 500:view.cambiar_ficha(false, false, true);break;
 		}
-		
-		//view.cambiar_ficha();
-	
 	
 	}
 	
@@ -97,10 +94,9 @@ public class Modelo {
 		numero[i].set_Apuesta(0);
 		}
 		
-		ficha=50;
-		credit=5000;
-		jugado=0;
 		view.Clear_table();
+		view.refresh_Credit(credit);
+		
 	}
 	
 	public void Pagar() // docena *3 , par *2 , color*2 
@@ -123,8 +119,8 @@ public class Modelo {
 		credit=credit+win_pleno+win_parImpar+win_decena+win_color;
 		jugado=0;
 		
-		view.refresh_Credit(credit);
-		//view.Clear_table();
+		Limpiar_mesa();
+		
 		
 	}
 	
@@ -142,12 +138,23 @@ public class Modelo {
 	public int get_Bet(int i){
 		return numero[i].get_Apuesta();
 		
-		
 	}
 	
 	public void return_apuesta(){
 		credit=credit+jugado;
 		view.Clear_table();
 		jugado=0;
+		view.refresh_Credit(credit);
+	}
+	
+	public void reiniciar(){
+		ficha=50;
+		set_ficha(ficha);
+		credit=5000;
+		jugado=0;
+		Limpiar_mesa();
+		view.Clear_table();
+		view.refresh_Credit(credit);
+
 	}
 }

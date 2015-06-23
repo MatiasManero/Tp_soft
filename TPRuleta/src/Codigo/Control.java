@@ -37,7 +37,7 @@ public class Control {
 	}
 	
 	public void restart(){
-		modelo.Limpiar_mesa();	
+		modelo.reiniciar();	
 	}
 	
 	public void devolver_Apuesta(){

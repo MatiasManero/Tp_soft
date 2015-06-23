@@ -780,6 +780,7 @@ public class View extends JFrame {
 			control.devolver_Apuesta();				
 			}
 		});
+		
 		btnBet.setBounds(611, 456, 89, 41);
 		contentPane.add(btnBet);
 		
@@ -799,6 +800,7 @@ public class View extends JFrame {
 		txtLhbkj.setBounds(496, 531, 318, 60);
 		contentPane.add(txtLhbkj);
 		txtLhbkj.setColumns(10);
+		txtLhbkj.setText("5000");
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Tunga", Font.PLAIN, 40));
@@ -901,7 +903,6 @@ public class View extends JFrame {
    
    public void Clear_table(){
 		   
-		   textField.setText("");
 		   button_0.setText("");
 		   button_1.setText("");
 		   button_2.setText("");
