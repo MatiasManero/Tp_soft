@@ -950,14 +950,53 @@ public class View extends JFrame {
    }
    
    public void Clear_table(){
-	   
-	   textField.setText("");
-//	    for(JButton boton:botonera){
-//	    	
-//	    	boton.setText("");
-//	    }
-	   
-	   
+		   
+		   textField.setText("");
+		   button_0.setText("");
+		   button_1.setText("");
+		   button_2.setText("");
+		   button_3.setText("");
+		   button_4.setText("");
+		   button_5.setText("");
+		   button_6.setText("");
+		   button_7.setText("");
+		   button_8.setText("");
+		   button_9.setText("");
+		   button_10.setText("");
+		   button_11.setText("");
+		   button_12.setText("");
+		   button_13.setText("");
+		   button_14.setText("");
+		   button_15.setText("");
+		   button_16.setText("");
+		   button_17.setText("");
+		   button_18.setText("");
+		   button_19.setText("");
+		   button_20.setText("");
+		   button_21.setText("");
+		   button_22.setText("");
+		   button_23.setText("");
+		   button_24.setText("");
+		   button_25.setText("");
+		   button_26.setText("");
+		   button_27.setText("");
+		   button_28.setText("");
+		   button_29.setText("");
+		   button_30.setText("");
+		   button_31.setText("");
+		   button_32.setText("");
+		   button_33.setText("");
+		   button_34.setText("");
+		   button_35.setText("");
+		   button_36.setText("");
+		   button_37.setText("");
+		   button_38.setText("");
+		   button_39.setText("");
+		   button_40.setText("");
+		   button_41.setText("");
+		   button_42.setText("");
+		   button_43.setText("");
+	   }
 
    }
    
