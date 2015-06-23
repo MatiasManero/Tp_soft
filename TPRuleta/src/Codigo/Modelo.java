@@ -24,7 +24,11 @@ public class Modelo {
 	
 	numero = new Numero[44];
 	color=false;
-	for (int i = 0; i < numero.length; i++) 
+	
+
+	numero[0]= new Numero(0,true,0,0,true);
+	
+	for (int i = 1; i < numero.length; i++) 
 	{
 		if(i%2==0)
 			parImpar=true;
@@ -101,22 +105,30 @@ public class Modelo {
 	
 	public void Pagar() // docena *3 , par *2 , color*2 
 	{
-		win_pleno = numero[win].get_Apuesta()*36;
-		
-		if(numero[win].esPar())
-			win_parImpar = numero[39].get_Apuesta()*2;
+		if (win == 0) 
+		{
+			win_pleno = numero[win].get_Apuesta()*36;
+			credit=credit+win_pleno;
+		}
 		else
-			win_parImpar = numero[40].get_Apuesta()*2;
+		{
+			win_pleno = numero[win].get_Apuesta()*36;
+			
+			if(numero[win].esPar())
+				win_parImpar = numero[39].get_Apuesta()*2;
+			else
+				win_parImpar = numero[40].get_Apuesta()*2;
+			
+			win_decena =  numero[numero[win].get_Decena()+40].get_Apuesta()*3;
+			
+			if(numero[win].esRojo())
+				win_color = numero[37].get_Apuesta()*2;
+			else
+				win_color = numero[38].get_Apuesta()*2;
+			
+			credit=credit+win_pleno+win_parImpar+win_decena+win_color;
+		}
 		
-		win_decena =  numero[numero[win].get_Decena()+40].get_Apuesta()*3;
-		
-		if(numero[win].esRojo())
-			win_color = numero[37].get_Apuesta()*2;
-		else
-			win_color = numero[38].get_Apuesta()*2;
-		
-		
-		credit=credit+win_pleno+win_parImpar+win_decena+win_color;
 		jugado=0;
 		
 		Limpiar_mesa();
