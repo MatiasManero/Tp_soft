@@ -24,6 +24,8 @@ import java.awt.Font;
 import java.util.ArrayList;
 
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class View extends JFrame {
@@ -45,6 +47,7 @@ public class View extends JFrame {
 	JRadioButton radioButton,radioButton_1,rdbtnNewRadioButton;
 	ArrayList<JButton> botonera;
 	View view=null;
+	private JLabel lblNewLabel_1;
 //	private String Apuesta="50";
 
 	/**
@@ -100,6 +103,83 @@ public class View extends JFrame {
 				control.add_Bet(1);
 			}
 		});
+		
+		
+		
+		
+		radioButton = new JRadioButton("50");
+		radioButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				control.set_Ficha(50);
+				
+				
+			}
+		});
+				
+				
+				radioButton_1 = new JRadioButton("100");
+				radioButton_1.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent arg0) {
+					control.set_Ficha(100);
+					
+					
+				}
+	});
+						
+							
+							rdbtnNewRadioButton = new JRadioButton("500");
+							rdbtnNewRadioButton.addMouseListener(new MouseAdapter() {
+								@Override
+								public void mouseClicked(MouseEvent arg0) {
+									control.set_Ficha(500);
+								}
+							});
+							
+							rdbtnNewRadioButton.setOpaque(false);
+							rdbtnNewRadioButton.setContentAreaFilled(false);
+							rdbtnNewRadioButton.setBorderPainted(false);
+							rdbtnNewRadioButton.setBounds(424, 409, 58, 23);
+							contentPane.add(rdbtnNewRadioButton);
+							rdbtnNewRadioButton.setSelected(false);
+							
+							rdbtnNewRadioButton.addMouseListener(new MouseAdapter() {
+								@Override
+								public void mouseClicked(MouseEvent e) {
+									control.set_Ficha(500);
+								}
+							});
+				
+				
+						radioButton_1.setOpaque(false);
+						radioButton_1.setContentAreaFilled(false);
+						radioButton_1.setBorderPainted(false);
+						radioButton_1.setBounds(424, 383, 58, 23);
+						contentPane.add(radioButton_1);
+						radioButton_1.setSelected(false);
+						
+						radioButton_1.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								control.set_Ficha(100);
+							}
+						});
+		
+				radioButton.setOpaque(false);
+				radioButton.setContentAreaFilled(false);
+				radioButton.setBorderPainted(false);
+				radioButton.setBounds(424, 357, 58, 23);
+				contentPane.add(radioButton);
+				
+				radioButton.setSelected(true);
+				
+				radioButton.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						control.set_Ficha(50);
+					}
+				});
 		
 		button_1.setBounds(632, 48, 61, 31);
 		button_1.setOpaque(false);
@@ -202,6 +282,10 @@ public class View extends JFrame {
 		contentPane.add(button_7);
 		
 		button_8 = new JButton("");
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		button_8.setFont(new Font("Tahoma", Font.BOLD, 8));
 		button_8.setForeground(Color.CYAN);
 		button_8.addMouseListener(new MouseAdapter() {
@@ -365,7 +449,7 @@ public class View extends JFrame {
 		button_18.setOpaque(false);
 		button_18.setContentAreaFilled(false);
 		button_18.setBorderPainted(false);
-		button_18.setBounds(753, 242, 61, 31);
+		button_18.setBounds(753, 211, 61, 31);
 		contentPane.add(button_18);
 		
 		button_19 = new JButton("");
@@ -380,7 +464,7 @@ public class View extends JFrame {
 		button_19.setOpaque(false);
 		button_19.setContentAreaFilled(false);
 		button_19.setBorderPainted(false);
-		button_19.setBounds(632, 401, 61, 31);
+		button_19.setBounds(632, 242, 61, 31);
 		contentPane.add(button_19);
 		
 		button_20 = new JButton("");
@@ -395,7 +479,7 @@ public class View extends JFrame {
 		button_20.setOpaque(false);
 		button_20.setContentAreaFilled(false);
 		button_20.setBorderPainted(false);
-		button_20.setBounds(692, 401, 61, 31);
+		button_20.setBounds(692, 242, 61, 31);
 		contentPane.add(button_20);
 		
 		button_21 = new JButton("");
@@ -410,7 +494,7 @@ public class View extends JFrame {
 		button_21.setOpaque(false);
 		button_21.setContentAreaFilled(false);
 		button_21.setBorderPainted(false);
-		button_21.setBounds(753, 211, 61, 31);
+		button_21.setBounds(753, 242, 61, 31);
 		contentPane.add(button_21);
 		
 		button_22 = new JButton("");
@@ -425,7 +509,7 @@ public class View extends JFrame {
 		button_22.setOpaque(false);
 		button_22.setContentAreaFilled(false);
 		button_22.setBorderPainted(false);
-		button_22.setBounds(632, 242, 61, 31);
+		button_22.setBounds(632, 273, 61, 31);
 		contentPane.add(button_22);
 		
 		button_23 = new JButton("");
@@ -440,7 +524,7 @@ public class View extends JFrame {
 		button_23.setOpaque(false);
 		button_23.setContentAreaFilled(false);
 		button_23.setBorderPainted(false);
-		button_23.setBounds(692, 242, 61, 31);
+		button_23.setBounds(692, 273, 61, 31);
 		contentPane.add(button_23);
 		
 		button_24 = new JButton("");
@@ -455,7 +539,7 @@ public class View extends JFrame {
 		button_24.setOpaque(false);
 		button_24.setContentAreaFilled(false);
 		button_24.setBorderPainted(false);
-		button_24.setBounds(753, 338, 61, 31);
+		button_24.setBounds(753, 273, 61, 31);
 		contentPane.add(button_24);
 		
 		button_25 = new JButton("");
@@ -471,7 +555,7 @@ public class View extends JFrame {
 		button_25.setOpaque(false);
 		button_25.setContentAreaFilled(false);
 		button_25.setBorderPainted(false);
-		button_25.setBounds(621, 276, 61, 31);
+		button_25.setBounds(632, 310, 61, 31);
 		contentPane.add(button_25);
 		
 		button_26 = new JButton("");
@@ -486,7 +570,7 @@ public class View extends JFrame {
 		button_26.setOpaque(false);
 		button_26.setContentAreaFilled(false);
 		button_26.setBorderPainted(false);
-		button_26.setBounds(692, 276, 61, 31);
+		button_26.setBounds(692, 310, 61, 31);
 		contentPane.add(button_26);
 		
 		button_27 = new JButton("");
@@ -501,7 +585,7 @@ public class View extends JFrame {
 		button_27.setOpaque(false);
 		button_27.setContentAreaFilled(false);
 		button_27.setBorderPainted(false);
-		button_27.setBounds(753, 276, 61, 31);
+		button_27.setBounds(753, 310, 61, 31);
 		contentPane.add(button_27);
 		
 		 button_28 = new JButton("");
@@ -516,7 +600,7 @@ public class View extends JFrame {
 		button_28.setOpaque(false);
 		button_28.setContentAreaFilled(false);
 		button_28.setBorderPainted(false);
-		button_28.setBounds(632, 310, 61, 31);
+		button_28.setBounds(632, 339, 61, 31);
 		contentPane.add(button_28);
 		
 		 button_29 = new JButton("");
@@ -531,7 +615,7 @@ public class View extends JFrame {
 		button_29.setOpaque(false);
 		button_29.setContentAreaFilled(false);
 		button_29.setBorderPainted(false);
-		button_29.setBounds(692, 310, 61, 31);
+		button_29.setBounds(692, 339, 61, 31);
 		contentPane.add(button_29);
 		
 		 button_30 = new JButton("");
@@ -546,7 +630,7 @@ public class View extends JFrame {
 		button_30.setOpaque(false);
 		button_30.setContentAreaFilled(false);
 		button_30.setBorderPainted(false);
-		button_30.setBounds(753, 310, 61, 31);
+		button_30.setBounds(753, 339, 61, 31);
 		contentPane.add(button_30);
 		
 		 button_31 = new JButton("");
@@ -561,7 +645,7 @@ public class View extends JFrame {
 		button_31.setOpaque(false);
 		button_31.setContentAreaFilled(false);
 		button_31.setBorderPainted(false);
-		button_31.setBounds(632, 338, 61, 31);
+		button_31.setBounds(632, 371, 61, 31);
 		contentPane.add(button_31);
 		
 		 button_32 = new JButton("");
@@ -576,7 +660,7 @@ public class View extends JFrame {
 		button_32.setOpaque(false);
 		button_32.setContentAreaFilled(false);
 		button_32.setBorderPainted(false);
-		button_32.setBounds(692, 338, 61, 31);
+		button_32.setBounds(692, 371, 61, 31);
 		contentPane.add(button_32);
 		
 		 button_33 = new JButton("");
@@ -591,7 +675,7 @@ public class View extends JFrame {
 		button_33.setOpaque(false);
 		button_33.setContentAreaFilled(false);
 		button_33.setBorderPainted(false);
-		button_33.setBounds(753, 401, 61, 31);
+		button_33.setBounds(753, 371, 61, 31);
 		contentPane.add(button_33);
 		
 		 button_34 = new JButton("");
@@ -606,7 +690,7 @@ public class View extends JFrame {
 		button_34.setOpaque(false);
 		button_34.setContentAreaFilled(false);
 		button_34.setBorderPainted(false);
-		button_34.setBounds(632, 375, 61, 31);
+		button_34.setBounds(632, 401, 61, 31);
 		contentPane.add(button_34);
 		
 		 button_35 = new JButton("");
@@ -621,7 +705,7 @@ public class View extends JFrame {
 		button_35.setOpaque(false);
 		button_35.setContentAreaFilled(false);
 		button_35.setBorderPainted(false);
-		button_35.setBounds(692, 375, 61, 31);
+		button_35.setBounds(692, 401, 61, 31);
 		contentPane.add(button_35);
 		
 		 button_36 = new JButton("");
@@ -636,7 +720,7 @@ public class View extends JFrame {
 		button_36.setOpaque(false);
 		button_36.setContentAreaFilled(false);
 		button_36.setBorderPainted(false);
-		button_36.setBounds(753, 375, 61, 31);
+		button_36.setBounds(753, 409, 61, 31);
 		contentPane.add(button_36);
 		
 		 button_0 = new JButton("");//ultimo numero
@@ -807,87 +891,15 @@ public class View extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(View.class.getResource("/Codigo/11645283_10206993693990158_1622502394_n.gif")));
+		lblNewLabel_1.setBounds(39, 11, 485, 421);
+		contentPane.add(lblNewLabel_1);
 		
-		
-		
-		radioButton = new JRadioButton("50");
-		radioButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				control.set_Ficha(50);
-				
-				
-			}
-		});
-
-		radioButton.setOpaque(false);
-		radioButton.setContentAreaFilled(false);
-		radioButton.setBorderPainted(false);
-		radioButton.setBounds(424, 357, 58, 23);
-		contentPane.add(radioButton);
-		
-		
-		radioButton_1 = new JRadioButton("100");
-		radioButton_1.addMouseListener(new MouseAdapter() {
-		@Override
-		public void mouseClicked(MouseEvent arg0) {
-			control.set_Ficha(100);
-			
-			
-		}
-	});
-
-
-		radioButton_1.setOpaque(false);
-		radioButton_1.setContentAreaFilled(false);
-		radioButton_1.setBorderPainted(false);
-		radioButton_1.setBounds(424, 383, 58, 23);
-		contentPane.add(radioButton_1);
-	
-		
-		rdbtnNewRadioButton = new JRadioButton("500");
-		rdbtnNewRadioButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				control.set_Ficha(500);
-			}
-		});
-		
-		rdbtnNewRadioButton.setOpaque(false);
-		rdbtnNewRadioButton.setContentAreaFilled(false);
-		rdbtnNewRadioButton.setBorderPainted(false);
-		rdbtnNewRadioButton.setBounds(424, 409, 58, 23);
-		contentPane.add(rdbtnNewRadioButton);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Matias\\Desktop\\Eclipse\\TPRuleta\\ruletaa.jpg"));
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(View.class.getResource("/Codigo/ruletaa.jpg")));
 		lblNewLabel.setBounds(0, 0, 834, 640);
 		contentPane.add(lblNewLabel);
-		
-		radioButton.setSelected(true);
-		radioButton_1.setSelected(false);
-		rdbtnNewRadioButton.setSelected(false);
-		
-		radioButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				control.set_Ficha(50);
-			}
-		});
-		
-		radioButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				control.set_Ficha(100);
-			}
-		});
-		
-		rdbtnNewRadioButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				control.set_Ficha(500);
-			}
-		});
 	}
 	
 	public void show_Num(int num){
