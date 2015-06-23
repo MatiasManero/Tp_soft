@@ -67,7 +67,8 @@ public class Modelo {
 		credit=credit-ficha;
 		jugado=jugado+ficha;
 		view.refresh_Credit(credit);
-		view.add_ficha(num,numero[num].get_Apuesta());
+		int aux=numero[num].get_Apuesta();
+		view.add_ficha(num,aux);
 		}
 		
 	}
@@ -123,7 +124,7 @@ public class Modelo {
 		jugado=0;
 		
 		view.refresh_Credit(credit);
-		view.Clear_table();
+		//view.Clear_table();
 		
 	}
 	

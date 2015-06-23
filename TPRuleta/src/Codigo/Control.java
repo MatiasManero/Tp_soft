@@ -1,27 +1,24 @@
 package Codigo;
 
-import java.util.EmptyStackException;
+//import java.util.EmptyStackException;
 
 public class Control {
 	
 	private Modelo modelo;
-	private View view;
+	private View view1;
 	
 	
 	
-	public Control(){
+	public Control(View view){
 	
-		view=new View();	
+		this.view1=view;	
 		modelo = new Modelo(view);
-				
-		
 	}
 	
 	public void Girar(){
 		modelo.Spin();
 		//Tiempo
 		cobrar();
-		
 				
 	}
 	
