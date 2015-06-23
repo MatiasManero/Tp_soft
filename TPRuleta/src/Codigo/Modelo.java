@@ -80,9 +80,9 @@ public class Modelo {
 		
 		switch(ficha){
 		
-		case 50:view.cambiar_ficha(true, false, false);
-		case 100:view.cambiar_ficha(false, true, false);
-		case 500:view.cambiar_ficha(false, false, true);
+		case 50:view.cambiar_ficha(true, false, false);break;
+		case 100:view.cambiar_ficha(false, true, false);break;
+		case 500:view.cambiar_ficha(false, false, true);break;
 		}
 		
 		//view.cambiar_ficha();
