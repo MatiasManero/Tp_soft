@@ -1,8 +1,10 @@
 package Codigo;
 
 
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,18 +14,23 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.WindowConstants;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Button;
+
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextPane;
+
 import java.awt.Font;
 import java.util.ArrayList;
 
 import javax.swing.SwingConstants;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -38,6 +45,9 @@ public class View extends JFrame {
 	private JTextField txtLhbkj;
 	private JTextField textField;
 	private Control control;
+	private Control2 control2;
+	private int num_ganador;
+	private double ruleta_rot;
 	JButton button_0,button_1,button_2,button_3,button_4,button_5,button_6,button_7 ,button_8,button_9;
 	JButton button_10,button_11,button_12,button_13,button_14,button_15,button_16,button_17 ,button_18,button_19;
 	JButton button_20,button_21,button_22,button_23,button_24,button_25,button_26,button_27 ,button_28,button_29;
@@ -48,6 +58,8 @@ public class View extends JFrame {
 	ArrayList<JButton> botonera;
 	View view=null;
 	private JLabel lblNewLabel_1;
+	private JButton btnRotarIzqu;
+	private JButton btnRotarDerec;
 //	private String Apuesta="50";
 
 	/**
@@ -93,6 +105,8 @@ public class View extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+
 		button_1 = new JButton("");
 		button_1.setBackground(Color.WHITE);
 		button_1.setFont(new Font("Tahoma", Font.BOLD, 8));
@@ -137,6 +151,17 @@ public class View extends JFrame {
 								}
 							});
 							
+							control2 = new Control2("11645283_10206993693990158_1622502394_n.gif");
+							control2.setBounds(38, 19, 402, 402);
+							contentPane.add(control2);
+							
+
+							
+			
+					        
+					        
+					        
+					        
 							rdbtnNewRadioButton.setOpaque(false);
 							rdbtnNewRadioButton.setContentAreaFilled(false);
 							rdbtnNewRadioButton.setBorderPainted(false);
@@ -849,8 +874,70 @@ public class View extends JFrame {
 		JButton btnNewButton = new JButton("SPIN");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {				
-		    control.Girar();		    
+			public void mouseClicked(MouseEvent arg0) {	
+				
+				
+	            try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}	
+
+			
+				ruleta_rot=0;
+				control.Girar();
+				
+				switch(num_ganador){
+				case 0:ruleta_rot=0;break;
+				case 1:ruleta_rot=-23*0.17027027027027027027027027027027;break;
+				case 2:ruleta_rot=-6*0.17027027027027027027027027027027;break;
+				case 3:ruleta_rot=-35*0.17027027027027027027027027027027;break;
+				case 4:ruleta_rot=-4*0.17027027027027027027027027027027;break;
+				case 5:ruleta_rot=-19*0.17027027027027027027027027027027;break;
+				case 6:ruleta_rot=-10*0.17027027027027027027027027027027;break;
+				case 7:ruleta_rot=-31*0.17027027027027027027027027027027;break;
+				case 8:ruleta_rot=-16*0.17027027027027027027027027027027;break;
+				case 9:ruleta_rot=-27*0.17027027027027027027027027027027;break;
+				case 10:ruleta_rot=-18*0.17027027027027027027027027027027;break;
+				case 11:ruleta_rot=-14*0.17027027027027027027027027027027;break;
+				case 12:ruleta_rot=-33*0.17027027027027027027027027027027;break;
+				case 13:ruleta_rot=-12*0.17027027027027027027027027027027;break;
+				case 14:ruleta_rot=-25*0.17027027027027027027027027027027;break;
+				case 15:ruleta_rot=-2*0.17027027027027027027027027027027;break;
+				case 16:ruleta_rot=-21*0.17027027027027027027027027027027;break;
+				case 17:ruleta_rot=-8*0.17027027027027027027027027027027;break;
+				case 18:ruleta_rot=-29*0.17027027027027027027027027027027;break;
+				case 19:ruleta_rot=-3*0.17027027027027027027027027027027;break;
+				case 20:ruleta_rot=-24*0.17027027027027027027027027027027;break;
+				case 21:ruleta_rot=-5*0.17027027027027027027027027027027;break;
+				case 22:ruleta_rot=-28*0.17027027027027027027027027027027;break;
+				case 23:ruleta_rot=-17*0.17027027027027027027027027027027;break;
+				case 24:ruleta_rot=-20*0.17027027027027027027027027027027;break;
+				case 25:ruleta_rot=-7*0.17027027027027027027027027027027;break;
+				case 26:ruleta_rot=-36*0.17027027027027027027027027027027;break;
+				case 27:ruleta_rot=-11*0.17027027027027027027027027027027;break;
+				case 28:ruleta_rot=-32*0.17027027027027027027027027027027;break;
+				case 29:ruleta_rot=-30*0.17027027027027027027027027027027;break;
+				case 30:ruleta_rot=-15*0.17027027027027027027027027027027;break;
+				case 31:ruleta_rot=-26*0.17027027027027027027027027027027;break;
+				case 32:ruleta_rot=-1*0.17027027027027027027027027027027;break;
+				case 33:ruleta_rot=-22*0.17027027027027027027027027027027;break;
+				case 34:ruleta_rot=-9*0.17027027027027027027027027027027;break;
+				case 35:ruleta_rot=-34*0.17027027027027027027027027027027;break;
+				case 36:ruleta_rot=-13*0.17027027027027027027027027027027;break;
+				}
+				
+				control2.setRotacion(ruleta_rot);
+	            control2.repaint();
+				
+			
+	            
+	
+		       
+
+
+		    
 			}
 		});
 		
@@ -892,11 +979,11 @@ public class View extends JFrame {
 		textField.setBounds(164, 483, 151, 85);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+		/*
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(View.class.getResource("/Codigo/11645283_10206993693990158_1622502394_n.gif")));
 		lblNewLabel_1.setBounds(39, 11, 485, 421);
-		contentPane.add(lblNewLabel_1);
+		contentPane.add(lblNewLabel_1);*/
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(View.class.getResource("/Codigo/ruletaa.jpg")));
@@ -905,6 +992,7 @@ public class View extends JFrame {
 	}
 	
 	public void show_Num(int num){
+		num_ganador= num;
 		textField.setText(Integer.toString(num));
 	}
 	
