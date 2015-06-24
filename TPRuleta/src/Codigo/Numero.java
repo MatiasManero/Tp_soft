@@ -18,7 +18,6 @@ public class Numero {
 	}	
 	
 	public int get_Numero(){
-		
 		return numero;
 	}
 	public boolean esRojo(){
