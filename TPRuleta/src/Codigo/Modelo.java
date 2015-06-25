@@ -12,19 +12,22 @@ public class Modelo {
 	private int ficha,credit,jugado, ganado;
 	
 	
-	public Modelo(View view) //CONSTRUSTOR
-{
-	this.view=view;
-	
+	public Modelo(View view) {
+		
+	this.view=view;	
 	ficha=50;
 	credit=5000;
 	jugado=0;
-	
 	numero = new Numero[44];
 	color=false;
+	Load();
+	}
 	
-
+	//----------------------SE CREAN LOS NUMEROS------------------------//
+	public void Load(){
+		
 	numero[0]= new Numero(0,true,0,0,true);
+	
 	
 	for (int i = 1; i < numero.length; i++) 
 	{
@@ -100,6 +103,8 @@ public class Modelo {
 		view.refresh_Credit(credit);
 		
 	}
+	
+
 	
 	public void Pagar() // docena *3 , par *2 , color*2 
 	{

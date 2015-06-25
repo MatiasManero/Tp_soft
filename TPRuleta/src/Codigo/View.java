@@ -18,6 +18,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import java.awt.Insets;
+import java.awt.Window.Type;
+import java.awt.Toolkit;
 
 
 public class View extends JFrame {
@@ -71,6 +73,10 @@ public class View extends JFrame {
 	
 
 	public View() {
+		setResizable(false);
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\iconoruleta.jpg"));
+		setFont(new Font("Dialog", Font.BOLD, 12));
+		setTitle("RULETA");
 		
 		control= new Control(this);
 		control2 = new Control2("11645283_10206993693990158_1622502394_n.gif");
@@ -167,12 +173,18 @@ public class View extends JFrame {
 		button_43 = new JButton("");
 		button_43.setMargin(new Insets(2, 4, 2, 4));
 		JButton btnNewButton = new JButton("SPIN");
+		
 		JButton btnBet = new JButton("CLEAR");
 		JButton btnExit = new JButton("RESTART");
 		JLabel lblNewLabel = new JLabel("");
 		textField = new JTextField();
+		textField.setForeground(Color.WHITE);
+		textField.setBackground(Color.DARK_GRAY);
 		txtLhbkj = new JTextField();
-		
+		txtLhbkj.setForeground(Color.BLACK);
+		txtLhbkj.setBackground(Color.LIGHT_GRAY);
+		txtLhbkj.setHorizontalAlignment(SwingConstants.CENTER);
+
 		configuracion();
 
 		
@@ -629,7 +641,7 @@ public class View extends JFrame {
 		
 		
 
-//----------------------Devolver la apuesta del juegador--------------------------------
+//----------------------Devolver la apuesta del jugador--------------------------------
 		
 		btnBet.addMouseListener(new MouseAdapter() {
 			@Override
@@ -653,17 +665,21 @@ public class View extends JFrame {
 		});
 		
 		
-//---------------------------------Configuracion---------------------------------------------		
+//---------------------------------CONFIGURACION---------------------------------------------
+		btnNewButton.setBackground(Color.yellow);
+		btnBet.setBackground(Color.yellow);
+		btnExit.setBackground(Color.yellow);
+		
 		btnExit.setBounds(725, 456, 89, 41);
 		contentPane.add(btnExit);
 		
-		txtLhbkj.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		txtLhbkj.setFont(new Font("Tahoma", Font.BOLD, 40));
 		txtLhbkj.setBounds(496, 531, 318, 60);
 		contentPane.add(txtLhbkj);
 		txtLhbkj.setColumns(10);
-		txtLhbkj.setText("5000");
+		txtLhbkj.setText("$ 5000");
 		
-		textField.setFont(new Font("Tunga", Font.PLAIN, 40));
+		textField.setFont(new Font("Arial", Font.BOLD, 73));
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setBounds(164, 483, 151, 85);
 		contentPane.add(textField);
@@ -681,16 +697,18 @@ public class View extends JFrame {
 		
 	}
 	
+	//-------------------MUESTRA EL NUMERO GANADOR-------------------------------------
 	public void show_Num(int num){
 		num_ganador= num;
 		textField.setText(Integer.toString(num));
 	}
 	
+	//-------------------ACTUALIZA EL VALOR DEL CREDITO EN PANTALLA--------------------
    public void refresh_Credit(int credit){
-	   txtLhbkj.setText(Integer.toString(credit));
+	   txtLhbkj.setText("$" + Integer.toString(credit));
    }
    
-   
+   //-----------------------LIMPIAR LAS APUESTAS--------------------------------------
    public void Clear_table(){
 		   
 		   button_0.setText("");
@@ -740,7 +758,7 @@ public class View extends JFrame {
 	   }
 
    
-   
+   //-----------------AGREGA LA APUESTA A LA FICHA----------------------------------
    public void	add_ficha(int boton,int ficha){
 	   
 	   String apuesta= Integer.toString(ficha);
@@ -797,7 +815,7 @@ public class View extends JFrame {
 	   
    }
    
-   
+   //---------------------UBICA A LA RULETA EN EL NUMERO GANADOR------------------------------
    public void rotar(){
 	   
 	   switch(num_ganador){
@@ -840,15 +858,14 @@ public class View extends JFrame {
 		case 36:ruleta_rot=-13*0.17027027027027027027027027027027;break;
 		
 		}
-	   
-   }
+	}
+   
    public void cambiar_ficha(boolean ficha1,boolean ficha2,boolean ficha3){
 	  
 	    radioButton.setSelected(ficha1);
 		radioButton_1.setSelected(ficha2);
 		rdbtnNewRadioButton.setSelected(ficha3);
-	   
-   }
+	   }
    
   public void configuracion(){
 	  	
