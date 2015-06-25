@@ -5,9 +5,8 @@ package Codigo;
 public class Control {
 	
 	private Modelo modelo;
+	@SuppressWarnings("unused")
 	private View view1;
-	
-	
 	
 	public Control(View view){
 	
@@ -24,9 +23,7 @@ public class Control {
 	
 	public void add_Bet(int num){
 		modelo.Apostar(num);
-
-	}
-		
+	}		
 	
 	public void set_Ficha(int ficha){
 		modelo.set_ficha(ficha); 

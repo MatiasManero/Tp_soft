@@ -6,14 +6,14 @@ public class Numero {
 	private boolean color;
 	private int docena;
 	private int apostado;
-	private	boolean esPar;
+	private	boolean paridad;
 	
-	public Numero(int num,boolean esRojo,int apostado, int pertenece,boolean paridad){
+	public Numero(int num,boolean esRojo,int apostado, int pertenece,boolean esPar){
 		
 		numero=num;
 		color=esRojo;
 		docena=pertenece;
-		esPar=paridad;
+		paridad=esPar;
 		this.apostado= apostado;
 	}	
 	
@@ -22,6 +22,10 @@ public class Numero {
 	}
 	public boolean esRojo(){
 		return color;
+	}
+	
+	public boolean esPar(){
+		return paridad;
 	}
 	
 	public int get_Decena(){
@@ -36,10 +40,4 @@ public class Numero {
 		else
 		apostado=0;	
 	}
-	
-	public boolean esPar(){
-		return esPar;
-	}
-	
-	
 }

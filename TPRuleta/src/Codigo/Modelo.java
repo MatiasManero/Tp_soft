@@ -6,10 +6,10 @@ public class Modelo {
 
 	private	View view;
 	private Numero[] numero;
-	private int win,win_pleno,win_parImpar,win_color,win_decena,docena;
+	private int win,win_pleno,win_parImpar,win_color,win_docena,docena;
 	private boolean color; // ROJO = true , NEGRO = false 
 	private boolean parImpar; // true = par , impar = false
-	private int ficha,credit,jugado;
+	private int ficha,credit,jugado, ganado;
 	
 	
 	public Modelo(View view) //CONSTRUSTOR
@@ -106,10 +106,12 @@ public class Modelo {
 		if (win == 0) 
 		{
 			win_pleno = numero[win].get_Apuesta()*36;
-			credit=credit+win_pleno;
+			ganado=win_pleno;
+			credit=credit+ganado;
 		}
 		else
 		{
+			if(win>0 && win<=36) // Agrego Lavezzi
 			win_pleno = numero[win].get_Apuesta()*36;
 			
 			if(numero[win].esPar())
@@ -117,14 +119,16 @@ public class Modelo {
 			else
 				win_parImpar = numero[40].get_Apuesta()*2;
 			
-			win_decena =  numero[numero[win].get_Decena()+40].get_Apuesta()*3;
+			if(win>1 && win<=36)// Agrego Lavezzi
+			win_docena =  numero[numero[win].get_Decena()+40].get_Apuesta()*3;
 			
 			if(numero[win].esRojo())
 				win_color = numero[37].get_Apuesta()*2;
 			else
 				win_color = numero[38].get_Apuesta()*2;
 			
-			credit=credit+win_pleno+win_parImpar+win_decena+win_color;
+			ganado=win_pleno+win_parImpar+win_docena+win_color;
+			credit=credit+ganado;
 		}
 		
 		jugado=0;
@@ -140,7 +144,7 @@ public class Modelo {
 	{
 		Random  rnd = new Random();
 		//tiempo
-		win = rnd.nextInt(37);
+		win = this.set_win(rnd.nextInt(37));
 		view.show_Num(win);
 		//tiempo
 	}
@@ -154,6 +158,7 @@ public class Modelo {
 		credit=credit+jugado;
 		view.Clear_table();
 		jugado=0;
+		Limpiar_mesa();
 		view.refresh_Credit(credit);
 	}
 	
@@ -172,5 +177,15 @@ public class Modelo {
 		
 		return numero[num];
 	}
-	
+
+
+	public int set_win(int win) {
+		this.win = win;
+		return win;
+	}
+
+
+	public int get_ganado() {
+		return ganado;
+	}
 }
