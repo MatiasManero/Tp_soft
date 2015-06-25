@@ -20,8 +20,6 @@ public class Modelo {
 	credit=5000;
 	jugado=0;
 	
-	
-	
 	numero = new Numero[44];
 	color=false;
 	
@@ -169,4 +167,10 @@ public class Modelo {
 		view.refresh_Credit(credit);
 
 	}
+	
+	public Numero get_Numero(int num){
+		
+		return numero[num];
+	}
+	
 }

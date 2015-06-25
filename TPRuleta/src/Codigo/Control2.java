@@ -32,6 +32,7 @@ public class Control2 extends JComponent {
         AffineTransform tx = AffineTransform.getRotateInstance(rotacion, 
                 icono.getIconWidth()/2, icono.getIconHeight()/2);
         g2d.drawImage(icono.getImage(), tx, this);
+        
     }
 
     public double getRotacion() {
@@ -41,4 +42,31 @@ public class Control2 extends JComponent {
     public void setRotacion(double rotacion) {
         this.rotacion = rotacion;
     }
+   
+    
+    public void rotar(){
+    	
+    	int i=0;
+		boolean flag=true;
+		
+		while(i<36){
+			
+			if(flag){
+			flag=false;
+			rotacion=0.17027027027027027027027027027027;
+			rotacion=(-i)*rotacion;
+            repaint();
+            
+            try {
+				Thread.sleep(400);
+				flag=true;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+            
+			i++;
+			}
+		}
+    }
+    
 }
