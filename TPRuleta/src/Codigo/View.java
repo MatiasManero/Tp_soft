@@ -60,7 +60,12 @@ public class View extends JFrame {
 	private JButton btnRotarDerec;
 	
 	
+<<<<<<< HEAD
 
+=======
+	
+//	private String Apuesta="50";
+>>>>>>> 40414ead84d85d49b87f7fa45a12c35d30dee3b7
 
 	/**
 	 * Launch the application.
@@ -92,6 +97,10 @@ public class View extends JFrame {
 //	}
 //	
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 40414ead84d85d49b87f7fa45a12c35d30dee3b7
 	public View() {
 		
 		control= new Control(this);
@@ -102,6 +111,7 @@ public class View extends JFrame {
 		rdbtnNewRadioButton = new JRadioButton("500");
 		button_0 = new JButton("");
 		button_1 = new JButton("");
+<<<<<<< HEAD
 		button_2 = new JButton("");
 		button_3 = new JButton("");
 		button_4 = new JButton("");
@@ -151,6 +161,18 @@ public class View extends JFrame {
 		textField = new JTextField();
 		txtLhbkj = new JTextField();
 				
+=======
+		button_1.setBackground(Color.WHITE);
+		button_1.setFont(new Font("Tahoma", Font.BOLD, 8));
+		button_1.setForeground(SystemColor.textHighlight);
+		button_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				control.add_Bet(1);
+			}
+		});
+		
+>>>>>>> 40414ead84d85d49b87f7fa45a12c35d30dee3b7
 		
 		configuracion();
 
@@ -541,6 +563,12 @@ public class View extends JFrame {
 
 //---------------------Numero 39----------------------------------------------------		
 		
+<<<<<<< HEAD
+=======
+		button_39 = new JButton("");//par
+		button_39.setFont(new Font("Tahoma", Font.BOLD, 8));
+		button_39.setForeground(Color.CYAN);
+>>>>>>> 40414ead84d85d49b87f7fa45a12c35d30dee3b7
 		button_39.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -559,6 +587,12 @@ public class View extends JFrame {
 
 //---------------------Numero 41----------------------------------------------------
 		
+<<<<<<< HEAD
+=======
+		button_41 = new JButton("");//1de12
+		button_41.setFont(new Font("Tahoma", Font.BOLD, 8));
+		button_41.setForeground(Color.CYAN);
+>>>>>>> 40414ead84d85d49b87f7fa45a12c35d30dee3b7
 		button_41.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -603,6 +637,10 @@ public class View extends JFrame {
 				rotar();
 				control2.setRotacion(ruleta_rot);
 	            control2.repaint();
+<<<<<<< HEAD
+=======
+				
+>>>>>>> 40414ead84d85d49b87f7fa45a12c35d30dee3b7
 			}
 		});
 		
@@ -647,6 +685,10 @@ public class View extends JFrame {
 		textField.setBounds(164, 483, 151, 85);
 		contentPane.add(textField);
 		textField.setColumns(10);
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 40414ead84d85d49b87f7fa45a12c35d30dee3b7
 		
 		
 		btnNewButton.setBounds(499, 456, 89, 41);
