@@ -41,8 +41,8 @@ public class Test_ModeloPagar {
 		modelo.set_win(0);
 		modelo.Pagar();
 		assertEquals(50*36, modelo.get_ganado());
-		modelo.reiniciar();
-		ante_de();
+//		modelo.reiniciar();
+//		ante_de();
 	}
 	
 	@Test
@@ -50,8 +50,8 @@ public class Test_ModeloPagar {
 		modelo.set_win(4);
 		modelo.Pagar();
 		assertEquals(50*36+50*3+50*2, modelo.get_ganado());	
-		modelo.reiniciar();
-		ante_de();
+//		modelo.reiniciar();
+//		ante_de();
 	}
 	
 	@Test
@@ -59,8 +59,8 @@ public class Test_ModeloPagar {
 		modelo.set_win(17);
 		modelo.Pagar();
 		assertEquals(50*36+500*3, modelo.get_ganado());	
-		modelo.reiniciar();
-		ante_de();
+//		modelo.reiniciar();
+//		ante_de();
 	}
 	
 	@Test
@@ -68,8 +68,8 @@ public class Test_ModeloPagar {
 		modelo.set_win(35);
 		modelo.Pagar();
 		assertEquals(500*36+50*3, modelo.get_ganado());	
-		modelo.reiniciar();
-		ante_de();
+//		modelo.reiniciar();
+//		ante_de();
 	}
 	
 	@Test
@@ -77,16 +77,7 @@ public class Test_ModeloPagar {
 		modelo.set_win(36);
 		modelo.Pagar();
 		assertEquals(50*36+50*3+50*2+50*2, modelo.get_ganado());	
-		modelo.reiniciar();
-		ante_de();
-	}
-	
-	@Test
-	public void test_pagar37(){
-		modelo.set_win(37);
-		modelo.Pagar();
-		assertEquals(0, modelo.get_ganado());
-		modelo.reiniciar();
-		ante_de();
+//		modelo.reiniciar();
+//		ante_de();
 	}
 }

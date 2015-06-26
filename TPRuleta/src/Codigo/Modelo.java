@@ -1,6 +1,8 @@
 package Codigo; 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 // color rojo 37 , color negro 38 , par 39, impar 40, decena1 41 , decena2 42 , decena3 43  }
 public class Modelo {
 
@@ -10,8 +12,7 @@ public class Modelo {
 	private boolean color; // ROJO = true , NEGRO = false 
 	private boolean parImpar; // true = par , impar = false
 	private int ficha,credit,jugado, ganado;
-	
-	
+		
 	public Modelo(View view) {
 		
 	this.view=view;	
@@ -58,12 +59,11 @@ public class Modelo {
 		
 }
 	
-	
 	public void Apostar(int num)
 	{
 		if(credit-ficha<0){
 			
-			System.out.println("Credito insuficiente");
+			JOptionPane.showMessageDialog(null,"                      Credito Insuficiente", "WARNING", JOptionPane.PLAIN_MESSAGE);
 			//throw new Ilega
 		}
 		
@@ -77,7 +77,6 @@ public class Modelo {
 		}
 		
 	}
-	
 	
 	public void set_ficha(int ficha){
 		
@@ -103,9 +102,7 @@ public class Modelo {
 		view.refresh_Credit(credit);
 		
 	}
-	
-
-	
+		
 	public void Pagar() // docena *3 , par *2 , color*2 
 	{
 		if (win == 0) 

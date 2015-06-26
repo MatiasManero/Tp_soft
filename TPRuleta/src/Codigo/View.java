@@ -73,8 +73,8 @@ public class View extends JFrame {
 	
 
 	public View() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(View.class.getResource("/Codigo/iconoruleta.jpg")));
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\iconoruleta.jpg"));
 		setFont(new Font("Dialog", Font.BOLD, 12));
 		setTitle("RULETA");
 		
