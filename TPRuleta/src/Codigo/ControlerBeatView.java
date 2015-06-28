@@ -1,6 +1,7 @@
 package Codigo;
 
 import BeatModel.BeatModelInterface;
+import BeatModel.ControllerInterface;
 import BeatModel.DJView;
 
 public class ControlerBeatView implements ControllerInterface {
@@ -16,7 +17,7 @@ public class ControlerBeatView implements ControllerInterface {
 		bpm=90;
 	}
 		
-	public void start(){
+	public void star(){
 		model.on();	
 			
 	}
@@ -39,6 +40,5 @@ public class ControlerBeatView implements ControllerInterface {
 	 	model.getBPM();	
 		
 	}
-
 	 	
 }

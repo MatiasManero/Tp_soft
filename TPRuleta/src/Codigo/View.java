@@ -81,13 +81,8 @@ public class View extends JFrame {
 
 	
 	
-	private View() {
-		
-		
-	
+	public View() {
 
-
-		
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\iconoruleta.jpg"));
 		setFont(new Font("Dialog", Font.BOLD, 12));

@@ -230,10 +230,6 @@ public class Modelo implements	BeatModelInterface {
 		
 	}
 	  
-	public void on_wav(){
-  
-	}
-  
     public void setBPM(int bpm){
     	
     }

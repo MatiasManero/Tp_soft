@@ -61,7 +61,7 @@ public class HeartModel implements HeartModelInterface, Runnable {
 
 
 	public int getHeartRate() {
-			return 60000/time;
+			return instances;
 	}
 	
 	public static int getinstance() {
