@@ -1,10 +1,13 @@
 package Codigo; 
+import java.util.ArrayList;
 import java.util.Random;
 
-import javax.swing.JOptionPane;
+import BeatModel.BPMObserver;
+import BeatModel.BeatModelInterface;
+import BeatModel.BeatObserver;
 
 // color rojo 37 , color negro 38 , par 39, impar 40, decena1 41 , decena2 42 , decena3 43  }
-public class Modelo {
+public class Modelo implements	BeatModelInterface {
 
 	private	View view;
 	private Numero[] numero;
@@ -12,7 +15,11 @@ public class Modelo {
 	private boolean color; // ROJO = true , NEGRO = false 
 	private boolean parImpar; // true = par , impar = false
 	private int ficha,credit,jugado, ganado;
-		
+//	ArrayList beatObservers = new ArrayList();
+//	ArrayList bpmObservers = new ArrayList();
+//	ArrayList InstanceObservers = new ArrayList();
+	
+	
 	public Modelo(View view) {
 		
 	this.view=view;	
@@ -59,11 +66,12 @@ public class Modelo {
 		
 }
 	
+	
 	public void Apostar(int num)
 	{
 		if(credit-ficha<0){
 			
-			JOptionPane.showMessageDialog(null,"                      Credito Insuficiente", "WARNING", JOptionPane.PLAIN_MESSAGE);
+			System.out.println("Credito insuficiente");
 			//throw new Ilega
 		}
 		
@@ -77,6 +85,7 @@ public class Modelo {
 		}
 		
 	}
+	
 	
 	public void set_ficha(int ficha){
 		
@@ -102,7 +111,9 @@ public class Modelo {
 		view.refresh_Credit(credit);
 		
 	}
-		
+	
+
+	
 	public void Pagar() // docena *3 , par *2 , color*2 
 	{
 		if (win == 0) 
@@ -190,4 +201,41 @@ public class Modelo {
 	public int get_ganado() {
 		return ganado;
 	}
+	
+	public void initialize(){
+		
+	}
+	  
+	public void on(){
+		
+	}
+  
+	public void off(){
+		
+	}
+  
+    public void setBPM(int bpm){
+    	
+    }
+  
+	public int getBPM(){
+		return 0;
+	}
+	
+	public void registerObserver(BeatObserver o){
+		
+	}
+	  
+	public void removeObserver(BeatObserver o){
+		
+	}
+  
+	public void registerObserver(BPMObserver o){
+		
+	}
+  
+	public void removeObserver(BPMObserver o){
+		
+	}
+
 }
