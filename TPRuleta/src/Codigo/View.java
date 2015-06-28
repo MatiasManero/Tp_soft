@@ -639,15 +639,17 @@ public class View extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {	
 				
-	            try {
+	          /*  try {
 						Thread.sleep(3000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}	
+					}	*/
 
 				ruleta_rot=0;			
-				control.Girar();	
+				control.Girar();
+				control.Transmitir();
+				
 				rotar();
 				control2.setRotacion(ruleta_rot);
 	            control2.repaint();

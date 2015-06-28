@@ -1,6 +1,13 @@
 package Codigo; 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import BeatModel.BPMObserver;
 import BeatModel.BeatModelInterface;
@@ -9,6 +16,8 @@ import BeatModel.BeatObserver;
 // color rojo 37 , color negro 38 , par 39, impar 40, decena1 41 , decena2 42 , decena3 43  }
 public class Modelo implements	BeatModelInterface {
 
+	private File a;
+	private Clip sonido;
 	private	View view;
 	private Numero[] numero;
 	private int win,win_pleno,win_parImpar,win_color,win_docena,docena;
@@ -202,16 +211,28 @@ public class Modelo implements	BeatModelInterface {
 		return ganado;
 	}
 	
+	public void initialize_wav(){
+		
+		try {
+			Clip sonido = AudioSystem.getClip();
+			File a = new File("C:\\Users\\Negro\\Desktop\\TpRuleta\\roulette_wheel.wav");
+			sonido.open(AudioSystem.getAudioInputStream(a));
+			sonido.start();
+			System.out.println("Reproduciendo 10s. de sonido...");
+			Thread.sleep(8000); // 1000 milisegundos (10 segundos)
+			sonido.close();
+			}
+			catch (Exception tipoerror) {
+			System.out.println("" + tipoerror);
+			}
+	}
+	
 	public void initialize(){
 		
 	}
 	  
-	public void on(){
-		
-	}
+	public void on_wav(){
   
-	public void off(){
-		
 	}
   
     public void setBPM(int bpm){
@@ -235,6 +256,18 @@ public class Modelo implements	BeatModelInterface {
 	}
   
 	public void removeObserver(BPMObserver o){
+		
+	}
+
+	@Override
+	public void on() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void off() {
+		// TODO Auto-generated method stub
 		
 	}
 
