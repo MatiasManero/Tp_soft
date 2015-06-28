@@ -37,6 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
+<<<<<<< HEAD
   <class id="5" language="java" name="BeatModel.DJView" project="TPRuletinha" 
     file="/TPRuletinha/src/BeatModel/DJView.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="176" y="549"/>    
@@ -117,10 +118,17 @@
       <multiplicity id="21" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
+=======
+  <association id="5">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="6" name="model"/>      
+      <multiplicity id="7" minimum="0" maximum="1"/>    
+>>>>>>> 3be3ee2b1a7d14b43d71500856dcc8197e1446aa
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+<<<<<<< HEAD
   <association id="22">    
     <end type="SOURCE" refId="2" navigable="false">      
       <attribute id="23" name="view"/>      
@@ -137,10 +145,31 @@
       <multiplicity id="27" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
+=======
+  <association id="8">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="9" name="uniqueinstance"/>      
+      <multiplicity id="10" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="11">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="12" name="heart"/>      
+      <multiplicity id="13" minimum="0" maximum="1"/>    
+>>>>>>> 3be3ee2b1a7d14b43d71500856dcc8197e1446aa
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+<<<<<<< HEAD
+=======
+  <realization id="14">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+>>>>>>> 3be3ee2b1a7d14b43d71500856dcc8197e1446aa
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
