@@ -3,18 +3,23 @@ package Codigo;
 
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
+
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
 
 import java.awt.Insets;
@@ -44,35 +49,45 @@ public class View extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	
-	public static void main(String[] args) {
+	private static View view;
+	private static int  i=0;
+
+	/**
+	 * Create the frame.
+	 */
+	public static View instance(){
 		
-		EventQueue.invokeLater(new Runnable() {
+		i++;
+		if(i==1){
+			
+			EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					View frame = new View();
-					frame.setVisible(true);
+					View view = new View();
+					view.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+		
+		}
+		
+		
+		return view;	
 	}
 	
-
-	/**
-	 * Create the frame.
-	 */
-//	public View instance(){
-//		if(view==null){
-//			view=new View();
-//		}
-//		return view;	
-//	}
-//	
 	
 
-	public View() {
+	
+	
+	private View() {
+		
+		
+	
+
+
+		
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\iconoruleta.jpg"));
 		setFont(new Font("Dialog", Font.BOLD, 12));
