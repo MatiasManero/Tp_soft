@@ -6,38 +6,13 @@ import BeatModel.BPMObserver;
 import BeatModel.BeatObserver;
 
 
-
-<<<<<<< HEAD
-
-public class HeartModel implements HeartModelInterface, Runnable {
-	ArrayList beatObservers = new ArrayList();
-	ArrayList bpmObservers = new ArrayList();
-	
-	int time = 1000;
-    int bpm = 90;
-	Random random = new Random(System.currentTimeMillis());
-	Thread thread;
-	static HeartModel instance;
-
-	public static HeartModel getInstance(){
-		
-		if(instance==null){
-			instance= new HeartModel(); 
-		}
-		
-		return instance;
-	}
-	
-	
-	private HeartModel() {
-=======
 public class HeartModel implements HeartModelInterface, Runnable {
 	
 	private static HeartModel uniqueinstance=null;
 	
 	ArrayList beatObservers = new ArrayList();
 	ArrayList bpmObservers = new ArrayList();
-	ArrayList InstanceObservers = new ArrayList();
+	//ArrayList InstanceObservers = new ArrayList();
 	int time = 1000;
     int bpm = 90;
     static int instances=0;
@@ -54,7 +29,6 @@ public class HeartModel implements HeartModelInterface, Runnable {
 	
 	private HeartModel() {
 		
->>>>>>> 3be3ee2b1a7d14b43d71500856dcc8197e1446aa
 		thread = new Thread(this);
 		thread.start();
 	}
@@ -81,13 +55,8 @@ public class HeartModel implements HeartModelInterface, Runnable {
 			} catch (Exception e) {}
 		}
 	}
-<<<<<<< HEAD
-	public int getHeartRate() {
-		return 60000/time;
-	}
 
-=======
-	
+
 	public int getHeartRate() {
 			return 60000/time;
 	}
@@ -99,7 +68,6 @@ public class HeartModel implements HeartModelInterface, Runnable {
 		{return instances;}
 	}
 	
->>>>>>> 3be3ee2b1a7d14b43d71500856dcc8197e1446aa
 	public void registerObserver(BeatObserver o) {
 		beatObservers.add(o);
 	}
@@ -135,9 +103,5 @@ public class HeartModel implements HeartModelInterface, Runnable {
 			observer.updateBPM();
 		}
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> 3be3ee2b1a7d14b43d71500856dcc8197e1446aa
-		
 }
