@@ -51,7 +51,7 @@ public class Control {
 	}
 	
 	public void initializar(){
-
+ 
 	}
 	  
 	public void Prender(){

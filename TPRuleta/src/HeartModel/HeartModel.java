@@ -24,9 +24,12 @@ public class HeartModel implements HeartModelInterface, Runnable {
 			uniqueinstance = new HeartModel();
 		}
 		instances++;
-		return uniqueinstance;
+		return uniqueinstance; 
 	}
 	
+	public int return_Intance(){
+		return instances;
+	}
 	private HeartModel() {
 		
 		thread = new Thread(this);

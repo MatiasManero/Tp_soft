@@ -215,11 +215,10 @@ public class Modelo implements	BeatModelInterface {
 		
 		try {
 			Clip sonido = AudioSystem.getClip();
-			File a = new File("C:\\Users\\Negro\\Desktop\\TpRuleta\\roulette_wheel.wav");
+			File a = new File("C:\\Users\\Negro\\Desktop\\TpRuleta\\TP_soft\\roulette_wheel.wav");
 			sonido.open(AudioSystem.getAudioInputStream(a));
 			sonido.start();
-			System.out.println("Reproduciendo 10s. de sonido...");
-			Thread.sleep(8000); // 1000 milisegundos (10 segundos)
+			Thread.sleep(7250); // 1000 milisegundos (10 segundos)
 			sonido.close();
 			}
 			catch (Exception tipoerror) {

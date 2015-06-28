@@ -1,7 +1,6 @@
 package HeartModel;
 
 import BeatModel.DJView;
-
 import BeatModel.ControllerInterface;
 
   
@@ -9,13 +8,15 @@ public class HeartController implements ControllerInterface {
 
 	HeartModelInterface model;
 	DJView view;
+	private HeartModel model2;
+	private int bpm;
   
 	public HeartController(HeartModelInterface model) {
 		this.model = model;
 
 		view = new DJView(this,new HeartAdapter(model));
 
-		view = new DJView((BeatModel.ControllerInterface) this, new HeartAdapter(model));
+		//view = new DJView( this, new HeartAdapter(model));
 
         view.createView();
         view.createControls();
@@ -23,15 +24,24 @@ public class HeartController implements ControllerInterface {
 		view.disableStartMenuItem();
 	}
   
-	public void start() {}
- 
-	public void stop() {}
+
     
-	public void increaseBPM() {}
+	public void increaseBPM() {
+		model2 = HeartModel.getInstance();
+         bpm = this.getBPM();
+	}
     
-	public void decreaseBPM() {}
-  
- 	public void setBPM(int bpm) {}
+	public int getBPM() { 
+		return bpm;
+	}
+
+	@Override
+	public void setBPM(int bpm) {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
 
 
 	@Override
@@ -39,6 +49,25 @@ public class HeartController implements ControllerInterface {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void decreaseBPM() {
+
+		
+	}
+
+
+
 
 
 }
