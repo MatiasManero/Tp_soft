@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+import Codigo.Control;
 import Codigo.Modelo;
 import Codigo.Numero;
 import Codigo.View;
@@ -16,12 +17,13 @@ public class Test_Numeros {
 	Modelo	modelo;
 	View	view;
 	ArrayList<Numero> numeritos;
+	private Control	control;
 	
 	@Before
 	public void antesTest(){
 		
-		view = new View();
-		modelo = new Modelo(view);
+		modelo=new Modelo();
+		control= new Control(modelo);
 		numeritos = new ArrayList<Numero>();
 		numeritos.add(modelo.get_Numero(0));
 		numeritos.add(modelo.get_Numero(1));

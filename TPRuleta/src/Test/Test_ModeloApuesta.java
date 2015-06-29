@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import Codigo.Control;
 import Codigo.Modelo;
 import Codigo.View;
 
@@ -12,19 +13,23 @@ public class Test_ModeloApuesta {
 
 	private Modelo test;
 	private View   view_tst;
-	
+	private Control	control;
 	@Before
 	public void apostar(){
-		view_tst=new View();
-		test=new Modelo(view_tst);		
+		test=new Modelo();
+		control= new Control(test);
+//		view_tst=new View();
+				
 		
 		test.Apostar(0);//Primer numero
 		test.Apostar(4);
 		test.Apostar(36);//Ultimo numero
+		test.Apostar(17);
 		
 		test.set_ficha(100);
 		test.Apostar(18);
 		test.Apostar(37);// rojo
+		test.Apostar(17);
 		
 		test.set_ficha(500);// cambiar la ficha= 500 
 		test.Apostar(19);
@@ -37,6 +42,7 @@ public class Test_ModeloApuesta {
 		test.Apostar(41);//Primera docena
 		test.Apostar(42);//Segunda docena
 		test.Apostar(43);//Tercera docena
+		
 		
 	}
 	
@@ -117,5 +123,11 @@ public class Test_ModeloApuesta {
 		
 	}
 	
+	@Test
+	public void test_apuestaMultiple17(){
+		
+		assertEquals(150, test.get_Bet(17));
+		
+	}
 
 }

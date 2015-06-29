@@ -11,11 +11,7 @@ import javax.swing.JComponent;
 
 public class Control2 extends JComponent {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;//Daba un warning y le agregue esto, no se si cambia algo... pero me molestaba :D
-
+	private static final long serialVersionUID = 1L;
 
 	@Override
     public Dimension getPreferredSize() {
@@ -30,7 +26,6 @@ public class Control2 extends JComponent {
     }
 
     private double rotacion = 0.0;
-
 
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -74,5 +69,5 @@ public class Control2 extends JComponent {
 			}
 		}
     }
-    
+   
 }

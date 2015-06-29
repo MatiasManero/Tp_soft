@@ -22,16 +22,19 @@ import java.awt.Font;
 
 import javax.swing.SwingConstants;
 
+import BeatModel.BPMObserver;
+import BeatModel.BeatModelInterface;
+import BeatModel.BeatObserver;
+import BeatModel.ControllerInterface;
+
 import java.awt.Insets;
 import java.awt.Window.Type;
 import java.awt.Toolkit;
 
 
-public class View extends JFrame {
+public class View extends JFrame implements BeatObserver, BPMObserver{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtLhbkj,textField;
@@ -39,57 +42,56 @@ public class View extends JFrame {
 	private Control2 control2;
 	private int num_ganador;
 	private double ruleta_rot;
-	JButton button_0,button_1,button_2,button_3,button_4,button_5,button_6,button_7 ,button_8,button_9;
-	JButton button_10,button_11,button_12,button_13,button_14,button_15,button_16,button_17 ,button_18,button_19;
-	JButton button_20,button_21,button_22,button_23,button_24,button_25,button_26,button_27 ,button_28,button_29;
-	JButton button_30,button_31,button_32,button_33,button_34,button_35,button_36,button_37 ,button_38,button_39;
-	JButton button_40,button_41,button_42,button_43;
-	JButton btnNewButton,btnExit;
-	JRadioButton radioButton,radioButton_1,rdbtnNewRadioButton;
-	/**
-	 * Launch the application.
-	 */
+	private JButton button_0,button_1,button_2,button_3,button_4,button_5,button_6,button_7 ,button_8,button_9;
+	private JButton button_10,button_11,button_12,button_13,button_14,button_15,button_16,button_17 ,button_18,button_19;
+	private JButton button_20,button_21,button_22,button_23,button_24,button_25,button_26,button_27 ,button_28,button_29;
+	private JButton button_30,button_31,button_32,button_33,button_34,button_35,button_36,button_37 ,button_38,button_39;
+	private JButton button_40,button_41,button_42,button_43;
+	private JButton btnNewButton,btnExit;
+	private JRadioButton radioButton,radioButton_1,rdbtnNewRadioButton;
 	private static View view;
 	private static int  i=0;
+	private Modelo model;
 
 	/**
 	 * Create the frame.
 	 */
-	public static View instance(){
-		
-		i++;
-		if(i==1){
-			
-			EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					View view = new View();
-					view.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		
-		}
-		
-		
-		return view;	
-	}
-	
-	
+//	public static View instance(){
+//		
+//		i++;
+//		if(i==1){
+//			
+//			EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					View view = new View();
+//					view.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//		
+//		}		
+//		return view;	
+//	}
+//	
 
 	
-	
-	public View() {
-
+	public View(Control control3,Modelo model) {	
+		
+		this.control = control3;
+		this.model = model;
+		model.registerObserver((BeatObserver)this);
+		
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\iconoruleta.jpg"));
 		setFont(new Font("Dialog", Font.BOLD, 12));
 		setTitle("RULETA");
 		
-		control= new Control(this);
+		//control= new Control(this);
 		control2 = new Control2("11645283_10206993693990158_1622502394_n.gif");
+		model.registerObserver((BeatObserver)this);
 		contentPane = new JPanel();
 		radioButton = new JRadioButton("50");
 		radioButton_1 = new JRadioButton("100");
@@ -634,20 +636,24 @@ public class View extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {	
 				
-	          /*  try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}	*/
 
-				ruleta_rot=0;			
+
+				ruleta_rot=0;
+				control.initializar();
 				control.Girar();
-				control.Transmitir();
+				control.Prender();
 				
+				try {
+					Thread.sleep(7250); // 1000 milisegundos (10 segundos)
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				control.Apagar();
 				rotar();
 				control2.setRotacion(ruleta_rot);
 	            control2.repaint();
+	            
 			}
 		});
 		
@@ -1276,6 +1282,22 @@ public class View extends JFrame {
 	
 	  
   }
+
+
+
+@Override
+public void updateBPM() {
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+@Override
+public void updateBeat() {
+	// TODO Auto-generated method stub
+	
+}
   
  
 }

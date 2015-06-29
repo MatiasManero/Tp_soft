@@ -8,19 +8,20 @@ import javax.sound.sampled.Clip;
 import BeatModel.BPMObserver;
 import BeatModel.BeatObserver;
 
-//import java.util.EmptyStackException;
+
 
 public class Control {
 	
-
 	private Modelo modelo;
 	@SuppressWarnings("unused")
 	private View view1;
 	
-	public Control(View view){
+	public Control(Modelo modelo){
 	
-		this.view1=view;	
-		modelo = new Modelo(view);
+		this.modelo =modelo ;
+		view1=new View(this,modelo);
+		view1.setVisible(true);
+		
 	}
 	
 	public void Girar(){
@@ -51,21 +52,16 @@ public class Control {
 	}
 	
 	public void initializar(){
- 
+		modelo.initialize();
 	}
 	  
 	public void Prender(){
-	
+		modelo.on();
 		
 	}
   
 	public void Apagar(){
-		
+		modelo.off();
 	}
-  
-	public void Transmitir(){
-		modelo.initialize_wav();
-	}
-
 
 }

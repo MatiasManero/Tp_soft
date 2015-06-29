@@ -1,7 +1,9 @@
-package HeartModel;
+package Principales;
 
 
 import BeatModel.ControllerInterface;
+import HeartModel.HeartController;
+import HeartModel.HeartModel;
 
 public class HeartTestDrive {
 

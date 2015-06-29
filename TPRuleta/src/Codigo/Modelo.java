@@ -24,20 +24,22 @@ public class Modelo implements	BeatModelInterface {
 	private boolean color; // ROJO = true , NEGRO = false 
 	private boolean parImpar; // true = par , impar = false
 	private int ficha,credit,jugado, ganado;
-//	ArrayList beatObservers = new ArrayList();
-//	ArrayList bpmObservers = new ArrayList();
-//	ArrayList InstanceObservers = new ArrayList();
+	private ArrayList beatObservers = new ArrayList();
+	private ArrayList bpmObservers = new ArrayList();
 	
 	
-	public Modelo(View view) {
-		
-	this.view=view;	
+	
+
+	public Modelo() {
+	
+	//this.view=view;	
 	ficha=50;
 	credit=5000;
 	jugado=0;
 	numero = new Numero[44];
 	color=false;
 	Load();
+	
 	}
 	
 	//----------------------SE CREAN LOS NUMEROS------------------------//
@@ -88,9 +90,9 @@ public class Modelo implements	BeatModelInterface {
 		numero[num].set_Apuesta(ficha);
 		credit=credit-ficha;
 		jugado=jugado+ficha;
-		view.refresh_Credit(credit);
+		((View) beatObservers.get(1)).refresh_Credit(credit);
 		int aux=numero[num].get_Apuesta();
-		view.add_ficha(num,aux);
+		((View) beatObservers.get(1)).add_ficha(num,aux);
 		}
 		
 	}
@@ -102,9 +104,9 @@ public class Modelo implements	BeatModelInterface {
 		
 		switch(ficha){
 		
-		case 50:view.cambiar_ficha(true, false, false);break;
-		case 100:view.cambiar_ficha(false, true, false);break;
-		case 500:view.cambiar_ficha(false, false, true);break;
+		case 50:((View) beatObservers.get(1)).cambiar_ficha(true, false, false);break;
+		case 100:((View) beatObservers.get(1)).cambiar_ficha(false, true, false);break;
+		case 500:((View) beatObservers.get(1)).cambiar_ficha(false, false, true);break;
 		}
 	
 	}
@@ -116,8 +118,8 @@ public class Modelo implements	BeatModelInterface {
 		numero[i].set_Apuesta(0);
 		}
 		
-		view.Clear_table();
-		view.refresh_Credit(credit);
+		((View) beatObservers.get(1)).Clear_table();
+		((View) beatObservers.get(1)).refresh_Credit(credit);
 		
 	}
 	
@@ -157,7 +159,6 @@ public class Modelo implements	BeatModelInterface {
 		
 		Limpiar_mesa();
 		
-		
 	}
 	
 	
@@ -165,23 +166,23 @@ public class Modelo implements	BeatModelInterface {
 	
 	{
 		Random  rnd = new Random();
-		//tiempo
+		
 		win = this.set_win(rnd.nextInt(37));
-		view.show_Num(win);
-		//tiempo
+		((View) beatObservers.get(1)).show_Num(win);
+		
 	}
 	
+	
 	public int get_Bet(int i){
-		return numero[i].get_Apuesta();
-		
+		return numero[i].get_Apuesta();	
 	}
 	
 	public void return_apuesta(){
 		credit=credit+jugado;
-		view.Clear_table();
+		((View) beatObservers.get(1)).Clear_table();
 		jugado=0;
 		Limpiar_mesa();
-		view.refresh_Credit(credit);
+		((View) beatObservers.get(1)).refresh_Credit(credit);
 	}
 	
 	public void reiniciar(){
@@ -190,13 +191,11 @@ public class Modelo implements	BeatModelInterface {
 		credit=5000;
 		jugado=0;
 		Limpiar_mesa();
-		view.Clear_table();
-		view.refresh_Credit(credit);
-
+		((View) beatObservers.get(1)).Clear_table();
+		((View) beatObservers.get(1)).refresh_Credit(credit);
 	}
 	
 	public Numero get_Numero(int num){
-		
 		return numero[num];
 	}
 
@@ -211,24 +210,18 @@ public class Modelo implements	BeatModelInterface {
 		return ganado;
 	}
 	
-	public void initialize_wav(){
-		
+	public void initialize(){
+
 		try {
-			Clip sonido = AudioSystem.getClip();
-			File a = new File("C:\\Users\\Negro\\Desktop\\TpRuleta\\TP_soft\\roulette_wheel.wav");
+			sonido = AudioSystem.getClip();
+			a = new File("C:\\Users\\Negro\\Desktop\\TpRuleta\\TP_soft\\roulette_wheel.wav");
 			sonido.open(AudioSystem.getAudioInputStream(a));
-			sonido.start();
-			Thread.sleep(7250); // 1000 milisegundos (10 segundos)
-			sonido.close();
 			}
 			catch (Exception tipoerror) {
 			System.out.println("" + tipoerror);
 			}
 	}
 	
-	public void initialize(){
-		
-	}
 	  
     public void setBPM(int bpm){
     	
@@ -238,32 +231,53 @@ public class Modelo implements	BeatModelInterface {
 		return 0;
 	}
 	
-	public void registerObserver(BeatObserver o){
-		
+	public void registerObserver(BeatObserver o) {
+		beatObservers.add(o);
 	}
-	  
-	public void removeObserver(BeatObserver o){
-		
+
+	public void notifyBeatObservers() {
+		for(int i = 0; i < beatObservers.size(); i++) {
+			BeatObserver observer = (BeatObserver)beatObservers.get(i);
+			observer.updateBeat();
+		}
 	}
-  
-	public void registerObserver(BPMObserver o){
-		
+
+	public void registerObserver(BPMObserver o) {
+		bpmObservers.add(o);
 	}
-  
-	public void removeObserver(BPMObserver o){
-		
+
+	public void notifyBPMObservers() {
+		for(int i = 0; i < bpmObservers.size(); i++) {
+			BPMObserver observer = (BPMObserver)bpmObservers.get(i);
+			observer.updateBPM();
+		}
+	}
+
+
+	public void removeObserver(BeatObserver o) {
+		int i = beatObservers.indexOf(o);
+		if (i >= 0) {
+			beatObservers.remove(i);
+		}
+	}
+
+
+
+	public void removeObserver(BPMObserver o) {
+		int i = bpmObservers.indexOf(o);
+		if (i >= 0) {
+			bpmObservers.remove(i);
+		}
 	}
 
 	@Override
 	public void on() {
-		// TODO Auto-generated method stub
-		
+		sonido.start();
 	}
-
+	
 	@Override
 	public void off() {
-		// TODO Auto-generated method stub
-		
+		sonido.close();
 	}
 
 }

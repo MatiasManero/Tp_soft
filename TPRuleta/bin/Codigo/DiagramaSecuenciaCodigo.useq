@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="Codigo.View" project="TPRuletinha" file="/TPRuletinha/src/Codigo/View.java" 
+    binary="false" label="view" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="769" y="0"/>    
+    <execution id="2">      
+      <position height="152" width="51" x="5" y="159"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="Codigo.Control" project="TPRuletinha" file="/TPRuletinha/src/Codigo/Control.java" 
+    binary="false" label="control" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="325" y="0"/>    
+    <execution id="4">      
+      <position height="110" width="64" x="60" y="180"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="21" width="7" x="89" y="227"/>    
+    </execution>  
+  </object>  
+  <object id="9" language="java" name="Codigo.ControlerBeatView" project="TPRuletinha" 
+    file="/TPRuletinha/src/Codigo/ControlerBeatView.java" binary="false" label="controlerBeatView" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="447" y="0"/>  
+  </object>  
+  <object id="10" language="java" name="Codigo.Control2" project="TPRuletinha" 
+    file="/TPRuletinha/src/Codigo/Control2.java" binary="false" label="control2" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="266" y="0"/>  
+  </object>  
+  <object id="11" language="java" name="Codigo.ControllerInterface" project="TPRuletinha" 
+    file="/TPRuletinha/src/Codigo/ControllerInterface.java" binary="false" label="controllerInterface" type="interface" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="448" y="0"/>  
+  </object>  
+  <object id="12" language="java" name="Codigo.Modelo" project="TPRuletinha" file="/TPRuletinha/src/Codigo/Modelo.java" 
+    binary="false" label="modelo" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="612" y="0"/>    
+    <execution id="7">      
+      <position height="68" width="64" x="471" y="201"/>    
+    </execution>  
+  </object>  
+  <object id="16" language="java" name="Codigo.Numero" project="TPRuletinha" file="/TPRuletinha/src/Codigo/Numero.java" 
+    binary="false" label="numero" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="662" y="0"/>    
+    <execution id="14">      
+      <position height="21" width="68" x="539" y="222"/>    
+    </execution>  
+  </object>  
+  <message id="3">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="13">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>
+</sequence-diagram>

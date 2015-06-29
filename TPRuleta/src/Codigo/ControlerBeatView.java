@@ -6,15 +6,18 @@ import BeatModel.DJView;
 
 public class ControlerBeatView implements ControllerInterface {
 	
-	DJView view1;
-	BeatModelInterface model;
-	int bpm;
+	private DJView view1;
+	private BeatModelInterface model;
+	private int bpm;
 	
-	public ControlerBeatView(View view){
-		model=new Modelo(view);
-		view1=new DJView((BeatModel.ControllerInterface) this,model);
-		model.initialize();	
-		bpm=90;
+	public ControlerBeatView(BeatModelInterface model){
+		this.model=model;
+		view1=new DJView(this,model);
+		model.initialize();
+	    view1.createView();
+	    view1.createControls();
+	    view1.disableStopMenuItem();
+	    view1.disableStartMenuItem();
 	}
 		
 	public void star(){
@@ -27,17 +30,14 @@ public class ControlerBeatView implements ControllerInterface {
 	}
 		
 	public void increaseBPM(){
-		bpm++;
-		model.setBPM(bpm);
 	}
 		
 	public void decreaseBPM(){
-		bpm--;
-		model.setBPM(bpm);
+	
 	}
 		
 	public void setBPM(int bpm){
-	 	model.getBPM();	
+	
 		
 	}
 	 	

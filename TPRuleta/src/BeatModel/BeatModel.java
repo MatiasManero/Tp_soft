@@ -12,8 +12,9 @@ import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
 public class BeatModel implements BeatModelInterface, MetaEventListener {
-	    Sequencer sequencer;
-		ArrayList beatObservers = new ArrayList();
+	    
+		private Sequencer sequencer;
+		private ArrayList beatObservers = new ArrayList();
 		ArrayList bpmObservers = new ArrayList();
 	    int bpm = 90;
 	     //otras instancias de variable van aca
