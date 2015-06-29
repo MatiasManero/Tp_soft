@@ -6,6 +6,7 @@ import java.util.Random;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
@@ -32,8 +33,7 @@ public class Modelo implements	BeatModelInterface {
 	
 
 	public Modelo() {
-	
-	//this.view=view;	
+		
 	ficha=50;
 	credit=5000;
 	jugado=0;
@@ -215,9 +215,9 @@ public class Modelo implements	BeatModelInterface {
 	
 	public void initialize(){
 
-		try {
-			sonido = AudioSystem.getClip();
-			a = new File("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\Tp_soft\\TPRuleta\\bin\\Codigo\\roulette_wheel.wav");
+		try {  
+			sonido = AudioSystem.getClip();   
+			a = new File("src/Codigo/roulette_wheel.wav");
 			sonido.open(AudioSystem.getAudioInputStream(a));
 			}
 			catch (Exception tipoerror) {
@@ -250,10 +250,7 @@ public class Modelo implements	BeatModelInterface {
 	}
 
 	public void notifyBPMObservers() {
-		for(int i = 0; i < bpmObservers.size(); i++) {
-			BPMObserver observer = (BPMObserver)bpmObservers.get(i);
-			observer.updateBPM();
-		}
+
 	}
 
 

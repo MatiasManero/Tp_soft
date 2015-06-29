@@ -22,13 +22,16 @@ public class ControlerBeatView implements ControllerInterface {
 		
 	public void star(){
 		model.on();
+		view1.disableStartMenuItem();
 		view1.enableStopMenuItem();
 			
 	}
 		
 	public void stop(){
-		view1.enableStartMenuItem();
+		
 		model.off();
+		view1.disableStopMenuItem();
+		view1.enableStartMenuItem();
 		
 	}
 		

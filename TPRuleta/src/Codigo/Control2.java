@@ -31,7 +31,7 @@ public class Control2 extends JComponent {
         Graphics2D g2d = (Graphics2D) g;
  
         AffineTransform tx = AffineTransform.getRotateInstance(rotacion, 
-                icono.getIconWidth()/2, icono.getIconHeight()/2);
+        icono.getIconWidth()/2, icono.getIconHeight()/2);
         g2d.drawImage(icono.getImage(), tx, this);
         
     }

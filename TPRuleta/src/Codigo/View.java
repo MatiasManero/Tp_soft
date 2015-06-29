@@ -53,29 +53,6 @@ public class View extends JFrame implements BeatObserver, BPMObserver{
 	private static int  i=0;
 	private Modelo model;
 
-	/**
-	 * Create the frame.
-	 */
-//	public static View instance(){
-//		
-//		i++;
-//		if(i==1){
-//			
-//			EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					View view = new View();
-//					view.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//		
-//		}		
-//		return view;	
-//	}
-//	
 
 	
 	public View(Control control3,Modelo model) {	
@@ -84,8 +61,9 @@ public class View extends JFrame implements BeatObserver, BPMObserver{
 		this.model = model;
 		model.registerObserver((BeatObserver)this);
 		
-		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\Tp_soft\\TPRuleta\\bin\\Codigo\\iconoruleta.jpg"));
+		setResizable(false);										
+		setIconImage(Toolkit.getDefaultToolkit().getImage(View.class.getResource("/Codigo/iconoruleta.jpg")));
+		
 		setFont(new Font("Dialog", Font.BOLD, 12));
 		setTitle("RULETA");
 		
