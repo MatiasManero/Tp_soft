@@ -63,11 +63,13 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
 		menu = new JMenu ("DJ Control");
 		startMenuItem = new JMenuItem("start");
 		menu.add(startMenuItem);
+		
 		startMenuItem.addActionListener (new ActionListener () {
 		public void actionPerformed (ActionEvent event) {
 			controller.star();
 		}
 		});
+		
 		stopMenuItem = new JMenuItem ("Stop");
 		menu.add (stopMenuItem);
 		stopMenuItem.addActionListener (new ActionListener () {
