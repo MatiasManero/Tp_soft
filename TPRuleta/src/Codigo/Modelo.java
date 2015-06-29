@@ -8,6 +8,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.JOptionPane;
 
 import BeatModel.BPMObserver;
 import BeatModel.BeatModelInterface;
@@ -83,6 +84,8 @@ public class Modelo implements	BeatModelInterface {
 		if(credit-ficha<0){
 			
 			System.out.println("Credito insuficiente");
+			JOptionPane.showMessageDialog(null,"                      Credito Insuficiente", "WARNING", JOptionPane.PLAIN_MESSAGE);
+
 			//throw new Ilega
 		}
 		

@@ -85,7 +85,7 @@ public class View extends JFrame implements BeatObserver, BPMObserver{
 		model.registerObserver((BeatObserver)this);
 		
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\iconoruleta.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Negro\\Desktop\\TpRuleta\\TP_soft\\TPRuleta\\bin\\Codigo\\iconoruleta.jpg"));
 		setFont(new Font("Dialog", Font.BOLD, 12));
 		setTitle("RULETA");
 		
