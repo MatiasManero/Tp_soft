@@ -217,7 +217,7 @@ public class Modelo implements	BeatModelInterface {
 
 		try {
 			sonido = AudioSystem.getClip();
-			a = new File("C:\\Users\\Negro\\Desktop\\TpRuleta\\TP_soft\\roulette_wheel.wav");
+			a = new File("C:\\Users\\Matias\\Desktop\\TrabajoSoft\\Tp_soft\\TPRuleta\\bin\\Codigo\\roulette_wheel.wav");
 			sonido.open(AudioSystem.getAudioInputStream(a));
 			}
 			catch (Exception tipoerror) {
