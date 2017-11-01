@@ -2,7 +2,7 @@
 <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask"/>
 <pmd rulesetfiles="java-imports">
 <formatter type="xml" toFile="pmd_report.xml"/>
-<fileset dir="Tp_soft/TPRuleta/src/">
+<fileset dir="Tp_soft/TPRuleta/src/Principales/">
 <include name="**/*.java"/>
 </fileset>
 </pmd>
