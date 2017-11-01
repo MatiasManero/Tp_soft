@@ -1,0 +1,9 @@
+<target name="pmd" depends="compress">
+<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask"/>
+<pmd rulesetfiles="java-imports">
+<formatter type="xml" toFile="pmd_report.xml"/>
+<fileset dir="<source file to be compiled>">
+<include name="**/*.java"/>
+</fileset>
+</pmd>
+</target>
